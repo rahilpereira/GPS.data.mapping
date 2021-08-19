@@ -1,0 +1,22 @@
+---
+title: "NDgpsmap"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggmap)
+library(sf)
+library(leaflet)
+library(mapview)
+library(tinytex)
+```
+
+```{r read.file}
+gps <- read.csv("C:/Users/forages/Documents/GPS.csv")
+```
+
+```{r create.map, echo=FALSE}
+mapview(gps, xcol = "Longitude", ycol = "Latitude", crs = 4269, grid = FALSE)
+```
